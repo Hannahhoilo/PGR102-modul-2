@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>PGR102 Modul 2</title>
+	<link rel="stylesheet" href="/styles/styles.css">
+</head>
+
+<body>
+	<main>
+		<h1>Hei!</h1>
+		<p>Velkommen!</p>
+		<p id="info-txt"></p>
+		<p id="user-info-txt"></p>
+
+		<div class="oppgaver">
+			<h2>Oppgave 1</h2>
+			<ul>
+				<li>a. let lar deg endre variablen etterpå, const er konstant, her kan du ikke endre</li>
+				<li>b. hvis du prøver å endre en const får du error</li>
+			</ul>
+			<h2>Oppgave 2</h2>
+			<ul>
+				<li>a. string, number, boolean</li>
+				<li>b. for å definere en string bruker vi "fnutter"</li>
+				<li>c. vi bruker ${enVariabel} for å legge in en variabel inn i en tekst</li>
+			</ul>
+
+			<h2>Oppgave 6</h2>
+			<p id="oppgave-6">Dette er en HTML</p>
+
+			<h2>Oppgave 7</h2>
+			<p id="my-colour"></p>
+
+			<h2>Oppgave 8</h2>
+			<p class="oppgave-8"></p>
+
+
+
+		</div>
+
+	</main>
+
+
+	<script>
+		// Hei <3 
+		console.log('Hei sveis!');
+
+		let favouriteGame = 'Elder Scrolls';
+
+		console.log(favouriteGame);
+		console.log(`Mitt favorittspill er: ${favouriteGame}!💗`);
+
+		/* --- */
+
+		const myName = "Hannah";
+		const myAge = 28;
+		myInfo = `Mitt navn er ${myName} og jeg er ${myAge} år gammel!`;
+
+		// En alert er en måte gi en output eller beskjed til brukeren på.
+		// alert("Hei og velkommen!");
+		// En promt lar oss få input fra brukeren. 
+		//const userName = prompt("Hva heter du?");
+		//const userAge = prompt("Hvor gammel er du?");
+
+		let oppgave8 = document.getElementById("oppgave-8");
+		oppgave8.innerHTML = result8
+
+		let firstNumber8 = (prompt("skriv et tall"));
+		let secondNumber8 = (prompt("skriv et annet tall"));
+
+		const result8 =
+		`Ditt første tall var ${firstNumber} og ditt andre tall var ${secondNumber}.
+		til sammen blir disse tallene: ${firstNumber + secondNumber}`;
+
+
+		
+
+
+
+		const infoTxt = document.getElementById("info-txt");
+		//const userInfoTxt = document.getElementById("user-info-txt");
+		let oppgave6 = document.getElementById("oppgave-6");
+		oppgave6.innerHTML = "Overskrevet av javascript!";
+
+		infoTxt.innerHTML = myInfo;
+		//userInfoTxt.innerHTML = `Ditt navn er ${userName} og du er ${userAge} år gammel.`;
+
+		let myColour = document.getElementById("my-colour");
+		//let whatIsYourColour = (prompt("What is your colour?"));
+		//myColour.innerHTML = `Your favourite colour is ${whatIsYourColour}!`;
+
+
+
+		// Oppgave 3 
+		// a)
+		const number1 = parseInt(1)
+		const number2 = parseInt(2)
+		const number3 = parseInt(3)
+
+		// b)
+		let results = number1 + number2 + number3
+		// c)
+		//alert(results);
+
+		// d)
+		//brukte const for number123 fordi disse tallene i seg selv ikke endrer seg 
+		// og brukte let på results fordi her blir variablen endret
+
+		// Oppgave 4
+		// a)
+		let myOppgaveName = "Hannah";
+		let myOppgaveAge = 28;
+		let myOppgavePower = "Flying"
+		// b) 
+		/*
+		alert(myOppgaveName);
+		alert(myOppgaveAge);
+		alert(myOppgavePower);
+		*/
+
+		// Oppgave 3
+		let superNumber1 = parseInt(1);
+		let superNumber2 = parseInt(2);
+		let superResults = superNumber1 + superNumber2;
+
+		//alert(superNumber1);
+		//alert(superNumber2);
+		//alert(`${superNumber1} + ${superNumber2} = ${superResults}`)
+
+		// Oppgave 4 
+		let myFavouriteMovie = "Alien";
+		const movieYear = 1979;
+
+		//alert(`Min favorittfilm er ${myFavouriteMovie} som kom ut i ${movieYear}!`)
+
+		/*
+		Oppgave 5
+		a) 
+		Forskjellen på 7 og "7" er at 7 blir lest som et nummer, mens "7" 
+		blir lest som en string (tekst)
+
+		b)
+		Vi kan få tilbake alle typer datatyper. 
+
+		c)
+		parseInt brukes for å hente ut tall fra en string og endrer tallene 
+
+		d)
+		.innerHTML bruker vi for å skrive kode som blir publisert i html'en og blir 
+		generert på siden så det blir synlig for brukeren. 
+
+		e)
+		getElementById bruker for å hente id-en man har lagt til en div i html inn i js
+		*/
+
+
+
+
+
+
+
+
+
+	</script>
+
+</body>
+
+</html>
