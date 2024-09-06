@@ -35,7 +35,7 @@
 			<p id="my-colour"></p>
 
 			<h2>Oppgave 8</h2>
-			<p class="oppgave-8"></p>
+			<p id="oppgave-8"></p>
 
 
 
@@ -66,14 +66,18 @@
 		//const userAge = prompt("Hvor gammel er du?");
 
 		let oppgave8 = document.getElementById("oppgave-8");
-		oppgave8.innerHTML = result8
 
-		let firstNumber8 = (prompt("skriv et tall"));
-		let secondNumber8 = (prompt("skriv et annet tall"));
+		let firstNumber8 = parseInt(prompt("skriv et tall"));
+		let secondNumber8 = parseInt(prompt("skriv et annet tall"));
 
-		const result8 =
-		`Ditt første tall var ${firstNumber} og ditt andre tall var ${secondNumber}.
-		til sammen blir disse tallene: ${firstNumber + secondNumber}`;
+		const result8 = firstNumber8 + secondNumber8;
+
+		oppgave8.innerHTML = `Ditt første tall var ${firstNumber8} og ditt andre tall var ${secondNumber8}.
+		til sammen blir disse tallene: ${result8}`;
+		
+
+		
+		
 
 
 		
