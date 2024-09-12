@@ -5,168 +5,200 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>PGR102 Modul 2</title>
-	<link rel="stylesheet" href="/styles/styles.css">
+	<link rel="stylesheet" href="styles/styles.css">
 </head>
 
 <body>
 	<main>
 		<h1>Hei!</h1>
-		<p>Velkommen!</p>
-		<p id="info-txt"></p>
-		<p id="user-info-txt"></p>
+		<p id="fun-fact"></p>
+		<p id="user-fun-fact"></p>
+		<br>
 
-		<div class="oppgaver">
-			<h2>Oppgave 1</h2>
-			<ul>
-				<li>a. let lar deg endre variablen etterpå, const er konstant, her kan du ikke endre</li>
-				<li>b. hvis du prøver å endre en const får du error</li>
-			</ul>
-			<h2>Oppgave 2</h2>
-			<ul>
-				<li>a. string, number, boolean</li>
-				<li>b. for å definere en string bruker vi "fnutter"</li>
-				<li>c. vi bruker ${enVariabel} for å legge in en variabel inn i en tekst</li>
-			</ul>
+		<label for="age-input">Your age:</label>
+		<input type="text" id="age-input">
 
-			<h2>Oppgave 6</h2>
-			<p id="oppgave-6">Dette er en HTML</p>
+		<p id="user-age"></p>
 
-			<h2>Oppgave 7</h2>
-			<p id="my-colour"></p>
+		<p id="user-vote"></p>
 
-			<h2>Oppgave 8</h2>
-			<p id="oppgave-8"></p>
-
-
-
-		</div>
 
 	</main>
 
 
 	<script>
+		/*
+		let userFunFactAnswer = prompt("Skriv en fun fact om deg selv!");
+
+		let firstNumber = parseInt(prompt("Skriv et tall"));
+		let secondNumber = parseInt(prompt("Skriv et annet tall"));
+
+		let result = firstNumber + secondNumber;
+		alert(`${firstNumber} + ${secondNumber} blir til sammen ${result}`)
+
+		
+		const superPassword = "heisveis";
+		const userPassword = prompt("Skriv inn riktig passord!");
+
+		if(userPassword.includes("heisveis")){
+			alert("HEI SVEIS du skrev rett passord!");
+		} else {
+			alert("Du skrev feil!");
+		}
+		
+		---------
+
+		const correctNumber = 21;
+
+		let userGuess = parseInt(prompt("Gjett et nummer mellom 1 og 100"));
+
+		if (userGuess === 21) {
+			alert("Hurra! Du gjetta riktig!");
+		} else if (userGuess < 21) {
+			alert("Du gjetta for lavt tall!");
+		} else if (userGuess > 21) {
+			alert("Du gjetta for høyt tall!");
+		}
+		-----
+		let minRegnbue = "regnbue"
+		let userRegnbue = prompt("Skriv en tekst om regnbue!");
+
+		if (userRegnbue.toLowerCase().includes("regnbue")){
+			alert("For en fin tekst!")
+		} else {
+			alert("Har du egentlig skrevet om regnbue?")
+		}
+		*/
+
+		const secretPassword = "hemmeligheter";
+			let bankBalance = 2000;
+
+			let passwordPrompt = prompt("Skriv passord for å se penger på konto");
+
+			if (passwordPrompt === secretPassword) {
+				alert(`Riktig passord! Du har ${bankBalance}kr på konto!`);
+				let bankBalanceWithdrawal = prompt("Ønsker du å ta ut penger? (ja/nei)");
+
+				if (bankBalanceWithdrawal.toLowerCase() === "ja") {
+					let howMuch = parseInt(prompt("Hvor mye penger vil du ta ut?"));
+
+					if (!isNaN(howMuch)) {  // Sjekker om inntastet beløp er et tall
+						if (howMuch <= bankBalance) {
+							bankBalance -= howMuch; // Oppdaterer saldoen
+							alert(`Du har tatt ut ${howMuch}kr. Ny saldo er ${bankBalance}kr.`);
+						} else {
+							alert("Du har ikke nok penger på kontoen til dette uttaket.");
+						}
+					} else {
+						alert("Hvor mye vil du ta ut?");
+					}
+				} else {
+					alert("Uttak avbrutt.");
+				}
+			} else {
+				alert("Feil passord, du suger.");
+			}
+
+		let funFact = document.getElementById("fun-fact");
+		let userFunFact = document.getElementById("user-fun-fact");
+		let userVote = document.getElementById("user-vote");
+
+		funFact.innerHTML = "Fun fact: jeg elsker pizza 🍕";
+		// userFunFact.innerHTML = `Din fun fact er "${userFunFactAnswer}"`;
+
+		let userAge = document.getElementById("user-age");
+		let ageInput = document.getElementById("age-input");
+
+		// Legger til en event listener for input-feltet
+		ageInput.addEventListener('input', function () {
+			// Oppdater user-age innhold
+			userAge.innerHTML = `Your age is ${ageInput.value}`;
+
+			// Sjekker aldersbetingelser og oppdaterer user-vote innhold
+			let age = parseInt(ageInput.value, 10); // Konvertering til tall
+			if (!isNaN(age)) {
+				if (age >= 18) {
+					userVote.innerHTML = `Du er ${age} år gammel, og gammel nok til å stemme!`;
+				} else {
+					userVote.innerHTML = `Du er ${age} år gammel, og ikke gammel nok til å stemme...`;
+				}
+			} else {
+				userVote.innerHTML = ''; // Ingen melding hvis input ikke er et tall
+			}
+		});
+
+
+
+
+
 		// Hei <3 
-		console.log('Hei sveis!');
-
-		let favouriteGame = 'Elder Scrolls';
-
-		console.log(favouriteGame);
-		console.log(`Mitt favorittspill er: ${favouriteGame}!💗`);
-
-		/* --- */
-
-		const myName = "Hannah";
-		const myAge = 28;
-		myInfo = `Mitt navn er ${myName} og jeg er ${myAge} år gammel!`;
-
-		// En alert er en måte gi en output eller beskjed til brukeren på.
-		// alert("Hei og velkommen!");
-		// En promt lar oss få input fra brukeren. 
-		//const userName = prompt("Hva heter du?");
-		//const userAge = prompt("Hvor gammel er du?");
-
-		let oppgave8 = document.getElementById("oppgave-8");
-
-		let firstNumber8 = parseInt(prompt("skriv et tall"));
-		let secondNumber8 = parseInt(prompt("skriv et annet tall"));
-
-		const result8 = firstNumber8 + secondNumber8;
-
-		oppgave8.innerHTML = `Ditt første tall var ${firstNumber8} og ditt andre tall var ${secondNumber8}.
-		til sammen blir disse tallene: ${result8}`;
-		
-
-		
-		
-
-
-		
-
-
-
-		const infoTxt = document.getElementById("info-txt");
-		//const userInfoTxt = document.getElementById("user-info-txt");
-		let oppgave6 = document.getElementById("oppgave-6");
-		oppgave6.innerHTML = "Overskrevet av javascript!";
-
-		infoTxt.innerHTML = myInfo;
-		//userInfoTxt.innerHTML = `Ditt navn er ${userName} og du er ${userAge} år gammel.`;
-
-		let myColour = document.getElementById("my-colour");
-		//let whatIsYourColour = (prompt("What is your colour?"));
-		//myColour.innerHTML = `Your favourite colour is ${whatIsYourColour}!`;
-
-
-
-		// Oppgave 3 
-		// a)
-		const number1 = parseInt(1)
-		const number2 = parseInt(2)
-		const number3 = parseInt(3)
-
-		// b)
-		let results = number1 + number2 + number3
-		// c)
-		//alert(results);
-
-		// d)
-		//brukte const for number123 fordi disse tallene i seg selv ikke endrer seg 
-		// og brukte let på results fordi her blir variablen endret
-
-		// Oppgave 4
-		// a)
-		let myOppgaveName = "Hannah";
-		let myOppgaveAge = 28;
-		let myOppgavePower = "Flying"
-		// b) 
 		/*
-		alert(myOppgaveName);
-		alert(myOppgaveAge);
-		alert(myOppgavePower);
+		if else setter betingelser til koden vår og 
+		hvilken kode som utføres i forskjellige scenarioer
+
+		let myAge = 26
+
+		if(myAge >= 18) {
+			alrt("yeye old enough")
+		}else{
+			alet("buhu!")
+		}
+
+
+		=== er lik som
+		!== er ikke lik som
+		< det på høyre side er større enn det på venstre side
+		> det på venstre side er større enn høyre
+		<= det til vendre er mindre eller samme 
+		<= det til vendsre er større eller samme
+
+
+		vi kan ha flere betingelser i en if else
+		&& betyr og/and den krever at kravene på begge 
+		sider av seg er sanne, for at koden skal utføres
+
+
+		let myAge = 26
+		let favouriteFood = "pasta";
+
+		if(myAge >= 18 && favouritefood === "pasta") {
+			alert("yeye old enough")
+		}else{
+			alet("buhu!")
+		}
+
+
+
+		II TO STREKER betyr eller/or
+
+			if(animal === "cat" II  animal === "tiger") {
+			alert("yeye old enough")
+		}else{
+			alet("buhu!")
+		}
+
+
+		else if gjør at vi kan sjekke flere utfall dersom ifén vår ikke blir oppfylt
+
+		const muMoney = 1000;
+		const dreamPurse = 5000;
+
+		if (mymoney < dreampurse) {
+			alrtt (2jeg har ikke nok penger jeg ,å spare ${dreampurse - mymoney} kr);
+
+		} else if (my money === dreampurse) {
+			alerrt ("huirra har nok");
+		} else {
+			alrt('yey jeg har nok og har litt til overs &{mymonei - dreampurse} kr')
+		}
+
+		hva er froskjellen på å bruke mange forskjellige if og else if 
+		if if if er dårlig, bedre med else if for den stopper koden når mna får en match
+
+
+
+
 		*/
-
-		// Oppgave 3
-		let superNumber1 = parseInt(1);
-		let superNumber2 = parseInt(2);
-		let superResults = superNumber1 + superNumber2;
-
-		//alert(superNumber1);
-		//alert(superNumber2);
-		//alert(`${superNumber1} + ${superNumber2} = ${superResults}`)
-
-		// Oppgave 4 
-		let myFavouriteMovie = "Alien";
-		const movieYear = 1979;
-
-		//alert(`Min favorittfilm er ${myFavouriteMovie} som kom ut i ${movieYear}!`)
-
-		/*
-		Oppgave 5
-		a) 
-		Forskjellen på 7 og "7" er at 7 blir lest som et nummer, mens "7" 
-		blir lest som en string (tekst)
-
-		b)
-		Vi kan få tilbake alle typer datatyper. 
-
-		c)
-		parseInt brukes for å hente ut tall fra en string og endrer tallene 
-
-		d)
-		.innerHTML bruker vi for å skrive kode som blir publisert i html'en og blir 
-		generert på siden så det blir synlig for brukeren. 
-
-		e)
-		getElementById bruker for å hente id-en man har lagt til en div i html inn i js
-		*/
-
-
-
-
-
-
-
-
 
 	</script>
 
